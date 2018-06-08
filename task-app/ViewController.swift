@@ -10,8 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //MARK: Properties
     @IBOutlet weak var TaskDoneText: UITextView!
+    @IBOutlet weak var TaskDoingText: UITextView!
     @IBOutlet weak var TaskToDoText: UITextView!
+    @IBOutlet weak var SummaryText: UITextView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +44,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+
+    
     @IBAction func ShowNewTaskForm(_ sender: Any) {
         print("New Button clicked");
-        TaskDoneText.text = "JIJI";
+        //TaskDoneText.text = "JIJI";
     }
     
+
 }
 

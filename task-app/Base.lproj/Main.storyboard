@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2jj-Is-qRf">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,22 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--TaskFormViewController-->
         <scene sceneID="0w0-ZI-pzT">
             <objects>
-                <viewController id="fE5-9V-tvd" sceneMemberID="viewController">
+                <viewController title="TaskFormViewController" id="fE5-9V-tvd" customClass="NewTaskFormViewController" customModule="task_app" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nl7-Sg-qMV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AD5-kH-Cag">
-                                <rect key="frame" x="87" y="593" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="ZjE-3U-inw"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyo-kz-NFw">
                                 <rect key="frame" x="263" y="593" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -34,24 +26,29 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="Ca6-uC-rQg"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="rob-Rt-k3p">
-                                <rect key="frame" x="211" y="458" width="118" height="30"/>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="rob-Rt-k3p">
+                                <rect key="frame" x="211" y="455" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="PercentageSliderAction:" destination="fE5-9V-tvd" eventType="valueChanged" id="Vvu-Fb-Btl"/>
+                                    <action selector="SliderAction:" destination="YGp-xp-5Xr" eventType="valueChanged" id="SNH-le-nql"/>
+                                </connections>
                             </slider>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pIR-RY-1UF">
-                                <rect key="frame" x="280" y="395" width="49" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pIR-RY-1UF">
+                                <rect key="frame" x="280" y="397" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="DoneSwitchAction:" destination="fE5-9V-tvd" eventType="valueChanged" id="9UO-op-rsG"/>
+                                </connections>
                             </switch>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rlj-Uk-uQH">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rlj-Uk-uQH">
                                 <rect key="frame" x="87" y="249" width="240" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pXn-6M-trd">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pXn-6M-trd">
                                 <rect key="frame" x="87" y="168" width="240" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -70,19 +67,62 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="0%" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="YdG-KR-zMd">
+                                <rect key="frame" x="229" y="518" width="98" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AD5-kH-Cag">
+                                <rect key="frame" x="106" y="593" width="48" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="CancelButtonAction:" destination="YGp-xp-5Xr" eventType="touchUpInside" id="L76-1B-9FN"/>
+                                    <action selector="kk:" destination="YGp-xp-5Xr" eventType="touchCancel" id="cNW-Kd-4Hn"/>
+                                    <action selector="m:" destination="YGp-xp-5Xr" eventType="touchUpInside" id="G3e-Or-Rs8"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="YoS-Ni-43U"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Rlj-Uk-uQH" firstAttribute="width" secondItem="pXn-6M-trd" secondAttribute="width" id="0GB-SB-VA9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lSV-mk-CGD"/>
                     </view>
+                    <connections>
+                        <outlet property="DoneSwitch" destination="pIR-RY-1UF" id="IUv-xU-OA9"/>
+                        <outlet property="PercentageSlider" destination="rob-Rt-k3p" id="PBY-Rr-7lR"/>
+                        <outlet property="PercentageText" destination="YdG-KR-zMd" id="fCC-T3-p5D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pWu-Ib-lZn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="YGp-xp-5Xr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-749.27536231884062" y="-44.021739130434788"/>
+            <point key="canvasLocation" x="-310" y="-373"/>
         </scene>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="Zac-v8-A4I">
+            <objects>
+                <navigationController id="2jj-Is-qRf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Idr-hJ-xvv">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vui-0H-FKH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xCf-KZ-lAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2274" y="-57"/>
+        </scene>
+        <!--SummaryViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="task_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="SummaryViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="task_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,17 +184,20 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="gTj-vF-yK7"/>
                     <connections>
+                        <outlet property="SummaryText" destination="zhd-YE-vBL" id="Wn0-Si-IUA"/>
+                        <outlet property="TaskDoingText" destination="mS5-d6-EYu" id="InE-vh-qv4"/>
                         <outlet property="TaskDoneText" destination="Ywq-BQ-hxX" id="Wo9-ON-wxW"/>
                         <outlet property="TaskToDoText" destination="ujK-it-7Tq" id="GLb-u9-LA6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1512" y="-44"/>
+            <point key="canvasLocation" x="-1330" y="-372"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZjE-3U-inw"/>
+        <segue reference="Ca6-uC-rQg"/>
     </inferredMetricsTieBreakers>
 </document>

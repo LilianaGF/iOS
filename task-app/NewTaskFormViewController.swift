@@ -10,9 +10,12 @@ import UIKit
 
 class NewTaskFormViewController: UIViewController {
 
+    //Mark: Properties
     @IBOutlet weak var PercentageText: UITextView!
     @IBOutlet weak var PercentageSlider: UISlider!
     @IBOutlet weak var DoneSwitch: UISwitch!
+    @IBOutlet weak var ShortDescriptionText: UITextField!
+    @IBOutlet weak var LongDescriptionText: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,15 +28,15 @@ class NewTaskFormViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    var strPercentage = "0%";
+    var intPercentage = 0;
     var boolDone = false;
     @IBAction func PercentageSliderAction(_ sender: UISlider) {
-        strPercentage = String(Int(self.PercentageSlider.value)) + "%";
+        intPercentage = Int(self.PercentageSlider.value);
         if(boolDone){
             self.PercentageText.text = "100%";
         }
         else{
-            self.PercentageText.text = strPercentage;
+            self.PercentageText.text = intPercentage.description + "%";
         }
     }
     
@@ -44,10 +47,20 @@ class NewTaskFormViewController: UIViewController {
         }
         else{
             boolDone = false;
-            self.PercentageText.text = strPercentage;
+            self.PercentageText.text = intPercentage.description + "%";
         }
     }
 
+
+    @IBAction func SaveNewTaskAction(_ sender: UIButton) {
+        
+        let task: Task = Task(
+            shortDescription: self.ShortDescriptionText.text!,
+            longDescription: self.LongDescriptionText.text,
+            percentage: intPercentage);
+        
+        print("TASK: " + (task).toString());
+    }
     
     /*
     // MARK: - Navigation

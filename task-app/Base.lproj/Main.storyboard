@@ -23,6 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
+                                    <action selector="SaveNewTaskAction:" destination="fE5-9V-tvd" eventType="touchUpInside" id="0sm-Re-7Ro"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="Ca6-uC-rQg"/>
                                 </connections>
                             </button>
@@ -41,15 +42,14 @@
                                     <action selector="DoneSwitchAction:" destination="fE5-9V-tvd" eventType="valueChanged" id="9UO-op-rsG"/>
                                 </connections>
                             </switch>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rlj-Uk-uQH">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rlj-Uk-uQH">
                                 <rect key="frame" x="87" y="249" width="240" height="120"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pXn-6M-trd">
-                                <rect key="frame" x="87" y="168" width="240" height="43"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.91715916450777202" green="0.91715916450777202" blue="0.91715916450777202" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" hint="Long description">
+                                    <accessibilityTraits key="traits" playsSound="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -85,23 +85,29 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="YoS-Ni-43U"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aDI-th-ymS">
+                                <rect key="frame" x="87" y="168" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Rlj-Uk-uQH" firstAttribute="width" secondItem="pXn-6M-trd" secondAttribute="width" id="0GB-SB-VA9"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lSV-mk-CGD"/>
                     </view>
                     <connections>
                         <outlet property="DoneSwitch" destination="pIR-RY-1UF" id="IUv-xU-OA9"/>
+                        <outlet property="LongDescriptionText" destination="Rlj-Uk-uQH" id="JSD-aT-nNj"/>
                         <outlet property="PercentageSlider" destination="rob-Rt-k3p" id="PBY-Rr-7lR"/>
                         <outlet property="PercentageText" destination="YdG-KR-zMd" id="fCC-T3-p5D"/>
+                        <outlet property="ShortDescriptionText" destination="aDI-th-ymS" id="JPH-fM-IFr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pWu-Ib-lZn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="YGp-xp-5Xr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-310" y="-373"/>
+            <point key="canvasLocation" x="-310.14492753623193" y="-373.36956521739131"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zac-v8-A4I">

@@ -13,6 +13,7 @@
 		8A95095E20C0AB280029F363 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A95095D20C0AB280029F363 /* Assets.xcassets */; };
 		8A95096120C0AB280029F363 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A95095F20C0AB280029F363 /* LaunchScreen.storyboard */; };
 		8AE76D3F20CB145800B6FB1C /* NewTaskFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE76D3E20CB145800B6FB1C /* NewTaskFormViewController.swift */; };
+		8AE76D4120CB3D4F00B6FB1C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE76D4020CB3D4F00B6FB1C /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8A95096020C0AB280029F363 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A95096220C0AB290029F363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AE76D3E20CB145800B6FB1C /* NewTaskFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskFormViewController.swift; sourceTree = "<group>"; };
+		8AE76D4020CB3D4F00B6FB1C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				8A95095F20C0AB280029F363 /* LaunchScreen.storyboard */,
 				8A95096220C0AB290029F363 /* Info.plist */,
 				8AE76D3E20CB145800B6FB1C /* NewTaskFormViewController.swift */,
+				8AE76D4020CB3D4F00B6FB1C /* Task.swift */,
 			);
 			path = "task-app";
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AE76D4120CB3D4F00B6FB1C /* Task.swift in Sources */,
 				8A95095920C0AB280029F363 /* ViewController.swift in Sources */,
 				8AE76D3F20CB145800B6FB1C /* NewTaskFormViewController.swift in Sources */,
 				8A95095720C0AB280029F363 /* AppDelegate.swift in Sources */,
